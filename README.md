@@ -3,12 +3,8 @@
 
 ## ขั้นตอนการสร้าง Web ด้วย Node.Js+Express
 
-<<<<<<< HEAD
-ขั้นตอนแรกให้ติดตั้ง Node.js และ Express  โดย Node.js สามารถดาวโหลดจากเว็บ [Node.js](https://nodejs.org/en)
-=======
 ขั้นตอนแรกให้ติดตั้ง **Node.js** และ **Express**  โดย Node.js สามารถดาวโหลดจากเว็บไซต์หลักของ [Node.js](https://nodejs.org/en)
 
->>>>>>> b13dce0cae2dd4d2bc239ff43af9d37255e5c8e0
 ส่วน Exprees นั้นติดตั้งด้วยการพิมพ์ Command Line ใน Terminal ของ Directory ที่สร้างเว็บ
 สร้าง ไฟล์ package.js โดยใช้คำสั่งลงใน Command Line เพื่อ generate
 
@@ -84,19 +80,6 @@ module.exports = router; //export router ออกไปใช้งาน
 
 ไฟล์นี้ใช้เก็บข้อมูล สำหรับแสดงผลข้อมูลโดยเก็บข้อมูลแบบ array และส่งข้อมูลไปให้ controller.js ผ่าน fucntion getAll() และทำงานเบบ Async จนกว่าจะเสร็จสมบูรณ์
 
-<<<<<<< HEAD
-view.js และ index.html ใน content
-<p align="center">
-  <img src="![img6](https://user-images.githubusercontent.com/106058972/226101809-9b9c8ee2-7aa5-4fc2-892c-5aadb491a728.png)" />
-</p>
-<p align="center">
-  <img src="![img7](https://user-images.githubusercontent.com/106058972/226101812-e66d1f75-2e3c-4fc5-a8d1-165f29052556.png)" />
-</p>  
- 
-View คือ ส่วนที่ใช้ในการแสดงเนื้อหาใน Web Browser ส่วน index.html ใช้เป็น template โดยหน้าเว็บนี้นำมาจาก [Site OverFlow](www.youtube.com/watch?v=P7iB6nvfnR8&t=1s)
-เพื่อใช้เป็น ref และทำการดัดแปลงเพื่อสอดคล้องกับข้อมูลที่อยู่ใน Model ขึ้นหน้าเว็บได้ โดยการแสดงข้อมูลจาก Model นั้น จะทำโดยการ .map ใช้เพื่อรันคำสั่งซ้ำตามจำนวนข้อมูลใน Array และ .join('') ใช้เพื่อลบ comma ',' ที่คั้นข้อมูลระหว่าง array ออก
-=======
->>>>>>> b13dce0cae2dd4d2bc239ff43af9d37255e5c8e0
 
 ## view.js และ index.html ใน content
 

@@ -89,7 +89,7 @@ module.exports = router; //export router ออกไปใช้งาน
 ![img7](https://user-images.githubusercontent.com/106058972/226101812-e66d1f75-2e3c-4fc5-a8d1-165f29052556.png)
 
  
-View.js คือ ส่วนที่ใช้ในการแสดงเนื้อหาใน Web Browser ส่วน index.html ใช้เป็น template โดยหน้าเว็บนี้นำมาจาก [Site OverFlow](www.youtube.com/watch?v=P7iB6nvfnR8&t=1s)
+View.js คือ ส่วนที่ใช้ในการแสดงเนื้อหาใน Web Browser ส่วน index.html ใช้เป็น template โดยหน้าเว็บนี้นำมาจาก Site OverFlow => www.youtube.com/watch?v=P7iB6nvfnR8&t=1s
 เพื่อใช้เป็น ref. และทำการดัดแปลงเพื่อให้สอดคล้องกับข้อมูลที่อยู่ใน Model ขึ้นหน้าเว็บได้ โดยการแสดงข้อมูลจาก Model นั้น จะทำโดยการ .map ใช้เพื่อรันคำสั่งซ้ำตามจำนวนข้อมูลใน Array และ .join('') ใช้เพื่อลบ comma ',' ที่คั้นข้อมูลระหว่าง array ออก
 
 ## style.css

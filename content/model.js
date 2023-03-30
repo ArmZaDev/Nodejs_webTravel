@@ -1,12 +1,24 @@
-let data = [
-    { id: 1, title:'Australia', desc: ''},
-    { id: 2, title:'New York', desc: ''},
-    { id: 3, title:'Thailand', desc: ''}
-    
-];
+const mongoose = require('mongoose');
 
-function getAll() {
-    return Promise.resolve(data);
-}
+mongoose.connect("mongodb://127.0.0.1:27017/Travel_db")
+.then(() => {
+    console.log("mongodb connected");
+})
+.catch(() => {
+    console.log("failed to connect");
+})
 
-module.exports = getAll;
+const LogInSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    }
+})
+
+const collection = new mongoose.model("Collection1", LogInSchema);
+
+module.exports = collection;

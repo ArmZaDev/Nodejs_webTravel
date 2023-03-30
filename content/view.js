@@ -1,6 +1,6 @@
 function render(contents) {
-    return `
-    <!DOCTYPE html>
+return `
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Travel Website</title>
@@ -23,8 +23,8 @@ function render(contents) {
 				<li><a href="#">Booking</a></li>
 			</ul>
 		</div>
-		<div class="signup">
-			<a href="#">Sign Up</a>
+		<div class="login">
+			<a href="#">Login</a>
 		</div>
 	</div>
 	<div class="body">

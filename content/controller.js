@@ -1,10 +1,13 @@
-const getAll = require('./model');
-const render = require('./view');
+const home = require('./model')
 
-async function listAction(request, response){
-    const data = await getAll();
-    const body = render(data);
-    response.send(body);
+async function listContent(request, response) {
+
+    const pugPath = `${__dirname}/views/home.pug`;
+    response.render(pugPath);
+
+    //const body = render(data);
+    //response.send(body);
 }
 
-module.exports = listAction;
+
+module.exports = listContent;

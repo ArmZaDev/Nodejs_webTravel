@@ -1,5 +1,7 @@
 const collection = require('./model')
 
+//routing
+//home view
 async function listContent(request, response) {
 
     const pugPath = `${__dirname}/views/home.pug`;
@@ -9,12 +11,14 @@ async function listContent(request, response) {
     //response.send(body);
 }
 
+//login view
 async function loginGet(req, res) {
 
     const pugPath = `${__dirname}/views/login.pug`;
     res.render(pugPath);
 }
 
+//login process
 async function login(req, res) {
 
     try{
@@ -34,5 +38,24 @@ async function login(req, res) {
     }
 }
 
+//signup view
+async function signupGet(req, res){
+    const pugPath = `${__dirname}/views/signup.pug`;
+    res.render(pugPath);
+}
 
-module.exports = {listContent, loginGet, login};
+//signup process
+async function signup(req, res) {
+    const data = {
+        name:req.body.name,
+        password:req.body.password
+    }
+
+    await collection.insertMany([data])
+
+    const pugPath = `${__dirname}/views/home.pug`;
+    res.render(pugPath);
+}
+
+
+module.exports = {listContent, loginGet, login, signupGet, signup};

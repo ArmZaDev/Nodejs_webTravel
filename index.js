@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.port|| 3030;
 
 app.use(express.json())
-app.set('view engine', 'pug')
+app.set('view engine', 'ejs')
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));

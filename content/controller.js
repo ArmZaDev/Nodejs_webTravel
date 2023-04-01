@@ -4,7 +4,7 @@ const collection = require('./model')
 //home view
 async function listContent(request, response) {
 
-    const pugPath = `${__dirname}/views/home.pug`;
+    const pugPath = `${__dirname}/views/home.ejs`;
     response.render(pugPath);
 
     //const body = render(data);
@@ -26,7 +26,7 @@ async function login(req, res) {
         console.log(collection);
 
         if(check.password === req.body.password){
-            const pugPath = `${__dirname}/views/home.pug`;
+            const pugPath = `${__dirname}/views/index.ejs`;
             res.render(pugPath);
         }
         else{

@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const {listContent, loginGet, login, signupGet, signup} = require('./controller');
+const {Content, listContent, loginGet, login, signupGet, signup, tour} = require('./controller');
 
 //home route
-router.get('/', listContent);
+router.get('/', Content); //index
+router.get('/home', listContent); //home
 
 //login route
 router.get('/login', loginGet);
@@ -12,5 +13,8 @@ router.post('/login', login);
 //signup route
 router.get('/signup', signupGet);
 router.post('/signup', signup);
+
+//tour
+router.get('/tour', tour);
 
 module.exports = router;

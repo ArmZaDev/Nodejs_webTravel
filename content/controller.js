@@ -1,7 +1,14 @@
-const collection = require('./model')
+const {User, Tour} = require('./model');
 
 //routing
-//home view
+//home view == index 
+async function Content(request, response) {
+
+    const pugPath = `${__dirname}/views/index.ejs`;
+    response.render(pugPath);
+}
+
+//index => login => home
 async function listContent(request, response) {
 
     const pugPath = `${__dirname}/views/home.ejs`;
@@ -14,7 +21,7 @@ async function listContent(request, response) {
 //login view
 async function loginGet(req, res) {
 
-    const pugPath = `${__dirname}/views/login.pug`;
+    const pugPath = `${__dirname}/views/login.ejs`;
     res.render(pugPath);
 }
 
@@ -22,11 +29,10 @@ async function loginGet(req, res) {
 async function login(req, res) {
 
     try{
-        const check = await collection.findOne({name:req.body.name})
-        console.log(collection);
+        const check = await User.findOne({name:req.body.name})
 
         if(check.password === req.body.password){
-            const pugPath = `${__dirname}/views/index.ejs`;
+            const pugPath = `${__dirname}/views/home.ejs`;
             res.render(pugPath);
         }
         else{
@@ -34,13 +40,13 @@ async function login(req, res) {
         }
     }
     catch{
-        res.send('wrong details')
+        res.send('Wrong details')
     }
 }
 
 //signup view
 async function signupGet(req, res){
-    const pugPath = `${__dirname}/views/signup.pug`;
+    const pugPath = `${__dirname}/views/signup.ejs`;
     res.render(pugPath);
 }
 
@@ -51,11 +57,15 @@ async function signup(req, res) {
         password:req.body.password
     }
 
-    await collection.insertMany([data])
+    await User.insertMany([data])
 
-    const pugPath = `${__dirname}/views/home.pug`;
+    const pugPath = `${__dirname}/views/home.ejs`;
     res.render(pugPath);
 }
 
+async function tour(req, res) {
+    const pugPath = `${__dirname}/views/tour.ejs`;
+    res.render(pugPath);
+}
 
-module.exports = {listContent, loginGet, login, signupGet, signup};
+module.exports = {Content, listContent, loginGet, login, signupGet, signup, tour};

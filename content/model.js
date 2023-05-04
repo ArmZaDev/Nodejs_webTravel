@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://127.0.0.1:27017/Travel_db")
+mongoose.connect("mongodb+srv://takoyaki:Takoyaki_00123@cluster0.gb4yjy7.mongodb.net/?retryWrites=true&w=majority")
 .then(() => {
     console.log("mongodb connected");
 })

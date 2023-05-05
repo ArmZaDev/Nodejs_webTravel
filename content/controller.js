@@ -27,7 +27,6 @@ async function loginGet(req, res) {
 
 //login process
 async function login(req, res) {
-
     try{
         const check = await User.findOne({name:req.body.name})
 

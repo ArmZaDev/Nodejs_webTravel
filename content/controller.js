@@ -1,11 +1,11 @@
-const {User, Tour} = require('./model');
+const {User, Tour, getAll, get} = require('./model');
 
 //routing
 //home view == index 
 async function Content(request, response) {
-
+    const tours = await getAll();
     const pugPath = `${__dirname}/views/index.ejs`;
-    response.render(pugPath);
+    response.render(pugPath,{tours:tours});
 }
 
 //index => login => home
@@ -63,8 +63,13 @@ async function signup(req, res) {
 }
 
 async function tour(req, res) {
+    const tour_id = req.params.id;
+    const tours = await get({_id:tour_id});
+
     const pugPath = `${__dirname}/views/tour.ejs`;
-    res.render(pugPath);
+    res.render(pugPath,{tour:tours});
+
+    console.log(tour_id);
 }
 
 module.exports = {Content, listContent, loginGet, login, signupGet, signup, tour};

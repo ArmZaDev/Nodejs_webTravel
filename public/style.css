@@ -93,6 +93,10 @@
 	border-radius: 1px;
 	padding: 30px 30px;
 }
+.places p{
+	color: #fee;
+	font-size: 15px;
+}
 .places a{
 	text-decoration: none;
 	color: #000;
@@ -124,3 +128,18 @@
 	text-decoration: underline;
 	transition: 0.4s;
 }
+
+.size_img {
+	width: 300px; 
+	height: 250px; 
+
+	justify-content: space-around;
+	border-radius: 12px;
+}
+
+.tour-list {
+	display: inline;
+	text-align: center;
+	border-radius: 12px;
+}
+

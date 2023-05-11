@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html>
-<head>
-	<title>Travel Website</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Home</title>
 </head>
-<body>
+<doby>
+<head>
 	<div class="navbar">
 		<div class="logo">
 			<h1>Travel</h1>
@@ -34,28 +29,19 @@
 			<a href="/login">Log In</a>
 		</div>
 	</div>
+
 	<div class="body">
-		<div class="heading">
-			<h1>Travel With Us</h1>
-			<br>
-			<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. </p>
-			<br>
-			<br>
-			<a href="#">Learn More</a>
-		</div>
+		<% Object.values(tours).forEach(function(item){%>
 		<div class="tours">
 			<div class="places">
-				<h2><a href="/tour">Australia</a></h2>
-			</div>
-			<div class="places">
-				<h2><a href="/tour">New York</a></h2>
-			</div>
-			<div class="places">
-				<h2><a href="/tour">Thailand</a></h2>
+				<h2><%=item.name%></h2>
+				<p><%=item.description%></p>
+				<br>
+				<a href="/tour/<%=item._id%>">Learn more</a>
 			</div>
 		</div>
-	</div>
+		<% }) %>
+	</div>	
 	<div class="footer">
 		<a href="#">Copyright</a>
 		<a href="#">Terms and Conditions</a>
@@ -63,7 +49,5 @@
 		<a href="#">Cookies</a>
 		<a href="#">Complaints</a>
 	</div>
-</body>
-</html>
 </body>
 </html>

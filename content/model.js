@@ -13,9 +13,18 @@ const User = mongoose.model("User", {
     password: String,
 });
 
-const Tour = mongoose.model("Tour", {
-    img: String,
+let Tour = mongoose.model("Tour", {
+    image: String,
+    name: String,
     description: String,
 });
 
-module.exports = {User, Tour};
+async function getAll() {
+    return Tour.find({  });
+}
+
+async function get(_id) {
+    return Tour.findOne({ _id });
+}
+
+module.exports = {User, Tour, getAll, get};

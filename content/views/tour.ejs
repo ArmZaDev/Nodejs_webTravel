@@ -8,11 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <% if(tour) {%>
+    <% if(tour) { %>
     <div>
         <h2><%=tour.name%></h2>
+        <img src="/img/<%=tour.image%>" style="width: 300px; height: 250px; border-radius: 12px;">
         <h2><%=tour.description%></h2>
-        <img src="img/<%=tour.image%>" style="width: 300px; height: 250px; border-radius: 12px;">
     </div>
     <% } %> 
 </body>

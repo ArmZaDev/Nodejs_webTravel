@@ -1,62 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Home</title>
-</head>
+	<!-- header -->
+	<%- include('./partials/head') %> 
 <body>
-	<div class="navbar">
-		<div class="logo">
-			<h1>Travel</h1>
-		</div>
-		<div class="menu">
-			<ul>
-				<li><a href="/home">Home</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Places</a></li>
-				<li><a href="#">Discounts</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Booking</a></li>
-			</ul>
-		</div>
-		<div class="login">
-			<a href="/profile">Profile</a>
-		</div>
-	</div>
+	<!-- navbar -->
+	<%- include('./partials/nav') %> 
+
 	<div class="body">
-		<div class="heading">
-			<h1>Travel With Us</h1>
-			<br>
-			<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. </p>
-			<br>
-			<br>
-			<a href="#">Learn More</a>
-		</div>
+		<% Object.values(tours).forEach(function(item){ %>
 		<div class="tours">
 			<div class="places">
-				<h2><a href="/tour">Australia</a></h2>
-			</div>
-			<div class="places">
-				<h2><a href="/tour">New York</a></h2>
-			</div>
-			<div class="places">
-				<h2><a href="/tour">Thailand</a></h2>
+				<h2><%= item.name %></h2>
+				<p><%= item.description %></p>
+				<br>
+				<a href="/tour/<%= item._id %>">Learn more</a>
 			</div>
 		</div>
+		<% }) %>
 	</div>
-	<div class="footer">
-		<a href="#">Copyright</a>
-		<a href="#">Terms and Conditions</a>
-		<a href="#">Privacy Policy</a>
-		<a href="#">Cookies</a>
-		<a href="#">Complaints</a>
-	</div>
+	<!-- footer -->
+	<%- include('./partials/footer') %> 
 
 </body>
 </html>

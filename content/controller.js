@@ -10,9 +10,9 @@ async function Content(request, response) {
 
 //index => login => home
 async function listContent(request, response) {
-
+    const tours = await getAll();
     const pugPath = `${__dirname}/views/home.ejs`;
-    response.render(pugPath);
+    response.render(pugPath,{tours:tours});
 
     //const body = render(data);
     //response.send(body);
@@ -31,8 +31,9 @@ async function login(req, res) {
         const check = await User.findOne({name:req.body.name})
 
         if(check.password === req.body.password){
+            const tours = await getAll();
             const pugPath = `${__dirname}/views/home.ejs`;
-            res.render(pugPath);
+            res.render(pugPath,{tours:tours});
         }
         else{
             res.send('Wrong password!')

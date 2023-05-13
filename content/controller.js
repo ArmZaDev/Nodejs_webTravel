@@ -44,6 +44,13 @@ async function login(req, res) {
     }
 }
 
+//logout
+async function logout(req, res) {
+    const tours = await getAll();
+    const pugPath = `${__dirname}/views/index.ejs`;
+    res.render(pugPath,{tours:tours});
+}
+
 //signup view
 async function signupGet(req, res){
     const pugPath = `${__dirname}/views/signup.ejs`;
@@ -73,4 +80,4 @@ async function tour(req, res) {
     console.log(tour_id);
 }
 
-module.exports = {Content, listContent, loginGet, login, signupGet, signup, tour};
+module.exports = {Content, listContent, loginGet, login, signupGet, signup, tour, logout};

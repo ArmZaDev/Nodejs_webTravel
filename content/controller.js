@@ -66,8 +66,10 @@ async function signup(req, res) {
 
     await User.insertMany([data])
 
+    const tours = await getAll();
+
     const pugPath = `${__dirname}/views/home.ejs`;
-    res.render(pugPath);
+    res.render(pugPath,{tours:tours});
 }
 
 async function tour(req, res) {
